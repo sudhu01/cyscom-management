@@ -45,9 +45,9 @@ function Table2(props){
         <table {...getTableProps()}>
             <thead>
             {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
+                <tr {...headerGroup.getHeaderGroupProps()}  key="Player">
                 {headerGroup.headers.map((column) => (
-                    <th {...column.getHeaderProps()}>
+                    <th {...column.getHeaderProps()}  key="Player">
                     {column.render("Header")}
                     </th>
                 ))}
@@ -58,9 +58,9 @@ function Table2(props){
             {rows.map((row) => {
                 prepareRow(row);
                 return (
-                <tr {...row.getRowProps()}>
+                <tr {...row.getRowProps()}  key="Player">
                     {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+                    <td {...cell.getCellProps()}  key="Player"> {cell.render("Cell")} </td>
                     ))}
                 </tr>
                 );
