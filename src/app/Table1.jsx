@@ -43,22 +43,22 @@ function Table1(props){
 
         <div className={`container relative ${props.left} bg-gradient-to-r from-sky-800 to-indigo-800`}>
         <table {...getTableProps()}>
-            <thead>
+            <thead key="Player">
             {headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
+                <tr {...headerGroup.getHeaderGroupProps()} key="Player">
                 {headerGroup.headers.map((column) => (
-                    <th {...column.getHeaderProps()}>
+                    <th {...column.getHeaderProps()} key="Player">
                     {column.render("Header")}
                     </th>
                 ))}
                 </tr>
             ))}
             </thead>
-            <tbody {...getTableBodyProps()}>
+            <tbody {...getTableBodyProps()} key="Player">
             {rows.map((row) => {
                 prepareRow(row);
                 return (
-                <tr {...row.getRowProps()}>
+                <tr {...row.getRowProps()} key="Player">
                     {row.cells.map((cell) => (
                     <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
                     ))}
