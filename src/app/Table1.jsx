@@ -54,13 +54,13 @@ function Table1(props){
                 </tr>
             ))}
             </thead>
-            <tbody {...getTableBodyProps()} key="Player">
+            <tbody {...getTableBodyProps()}>
             {rows.map((row) => {
                 prepareRow(row);
                 return (
                 <tr {...row.getRowProps()} key="Player">
                     {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()}> {cell.render("Cell")} </td>
+                    <td {...cell.getCellProps()}  key="Player"> {cell.render("Cell")} </td>
                     ))}
                 </tr>
                 );
