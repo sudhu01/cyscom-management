@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-y:scroll; 
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  @apply max-h-[600px] shadow-2xl shadow-indigo-500/50 overflow-y-scroll;
+}
+table {
+  @apply w-[1000px] h-[800px] overflow-hidden  border-collapse;
+}
+th,
+td {
+  @apply bg-[rgba(255,255,255,0.2)] text-white p-[15px] font-oswald;
+}
+th {
+  @apply text-left;
+}
+thead th {
+  @apply bg-[#55608f];
+}
+tbody tr:hover {
+  @apply bg-[rgba(255,255,255,0.3)];
+}
+tbody td {
+  @apply relative hover:before:content-[""] hover:before:absolute hover:before:top-[-9999px] hover:before:bottom-[-9999px] hover:before:bg-[rgba(255,255,255,0.2)] hover:before:z-[-1] hover:before:inset-x-0;
+}
+
+.border {
+@apply p-[10px] rounded-xl border-2 border-solid;
+border-image: linear-gradient(to right, #feffff 0%, #001b42 100%) 1;
+}
+
+.background-container {
+  height: 100%;
+            background-color: #0076FF;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+            background-size: 40px 40px;
+            overflow: hidden;
+        }
+
+.grid1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+      linear-gradient(to right, rgba(255, 0, 0, 0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 0, 200, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 118, 255, 0) 50%, rgba(0, 118, 255, 1) 90%);
+}
+
+.section-separator {
+  position: relative;
+  background-color: #001b42;
+  height: 20vh;
+}
+
+.section-separator::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #001b42;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+}
+
+.dashboard_body{
+  @apply min-h-screen min-h-[100dvh] bg-[color:var(--base-clr)] text-[color:var(--text-clr)] grid grid-cols-[auto_1fr];
+
+}
+
+.dashboard_body #sidebar {
+  @apply box-border h-screen w-[250px] bg-[#001b42] text-[azure] sticky transition-[300ms] duration-[ease-in-out] overflow-hidden px-[1em] py-[5px] border-r-[#feffff] border-r border-solid top-0;
+  align-self: start;
+  text-wrap: nowrap;
+}
+.dashboard_body #sidebar.close {
+  @apply w-[60px] p-[5px];
+}
+.dashboard_body #sidebar ul {
+  list-style: none;
+}
+.dashboard_body #sidebar > ul > li:first-child {
+  @apply flex justify-end mb-4;
+}
+.dashboard_body #sidebar > ul > li:first-child .logo {
+  @apply font-semibold;
+}
+.dashboard_body #sidebar ul li.active a {
+  @apply text-[#0076FF];
+}
+.dashboard_body #sidebar ul li.active a svg {
+  @apply fill-[#270042];
+}
+.dashboard_body #sidebar a,
+.dashboard_body #sidebar .dropdown-btn,
+.dashboard_body #sidebar .logo {
+  @apply no-underline text-[azure] flex items-center gap-[1em] p-[0.85em] rounded-[0.5em];
+}
+.dropdown-btn {
+  @apply w-full text-left cursor-pointer border-[none];
+  background: none;
+  font: inherit;
+}
+#sidebar svg {
+  @apply shrink-0 fill-[azure];
+}
+.dashboard_body #sidebar a:hover,
+.dashboard_body #sidebar .dropdown-btn:hover {
+  @apply bg-[#0077ff3a];
+}
+.dashboard_body #sidebar .sub-menu {
+  @apply grid grid-rows-[0fr] transition-[300ms] duration-[ease-in-out];
+}
+.dashboard_body #sidebar .sub-menu > div {
+  @apply overflow-hidden;
+}
+.dashboard_body #sidebar .sub-menu.show {
+  @apply grid-rows-[1fr];
+}
+.dropdown-btn svg {
+  @apply transition-[200ms] duration-[ease];
+}
+.rotate svg:last-child {
+  rotate: 180deg;
+}
+.dashboard_body #sidebar .sub-menu a {
+  @apply pl-[2em];
+}
+.dashboard_body #toggle-btn {
+  @apply cursor-pointer ml-auto p-[1em] rounded-[0.5em] border-[none];
+  background: none;
+}
+.dashboard_body #toggle-btn svg {
+  @apply transition-[rotate] duration ease-[ease];
+}
+#toggle-btn:hover {
+  @apply bg-[#0077ff3a];
+}
+@media (max-width: 800px) {
+  .dashboard_body {
+    @apply grid-cols-[1fr];
+  }
+  .dashboard_body #sidebar {
+    @apply h-[60px] w-full border-t-[color:var(--line-clr)] fixed p-0 border-r-[none] border-t border-solid top-[unset] bottom-0;
+  }
+  .dashboard_body #sidebar > ul {
+    @apply grid auto-cols-[60px] grid-flow-col items-center overflow-x-scroll p-0;
+  }
+  .dashboard_body #sidebar ul li {
+    @apply h-full;
+  }
+  .dashboard_body #sidebar ul a,
+  .dashboard_body #sidebar ul .dropdown-btn {
+    @apply w-[60px] h-[60px] justify-center p-0 rounded-none;
+  }
+  .dashboard_body #sidebar ul li span,
+  .dashboard_body #sidebar ul li:first-child,
+  .dashboard_body #sidebar .dropdown-btn svg:last-child {
+    @apply hidden;
+  }
+  .dashboard_body #sidebar ul li .sub-menu.show {
+    @apply fixed box-border h-[60px] w-full bg-[color:var(--hover-clr)] border-t-[color:var(--line-clr)] flex justify-center border-t border-solid left-0 bottom-[60px];
+  }
+  .dashboard_body #sidebar ul li .sub-menu.show > div {
+    @apply overflow-x-auto;
+  }
+  .dashboard_body #sidebar ul li .sub-menu.show li {
+    @apply inline-flex;
+  }
+  .dashboard_body #sidebar ul li .sub-menu.show a {
+    @apply box-border w-auto justify-center p-[1em];
+  }
+}
+
