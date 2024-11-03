@@ -152,7 +152,7 @@ border-image: linear-gradient(to right, #feffff 0%, #001b42 100%) 1;
   background: none;
 }
 .dashboard_body #toggle-btn svg {
-  @apply transition-[rotate] duration ease-[ease];
+  @apply transition-[rotate] duration-[ease];
 }
 #toggle-btn:hover {
   @apply bg-[#0077ff3a];
