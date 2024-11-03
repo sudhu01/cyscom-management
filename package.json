@@ -1,0 +1,37 @@
+{
+  "name": "cyscom-management",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/use-infinite-scroll": "^2.1.5",
+    "@react-spring/parallax": "^9.7.5",
+    "@react-stately/data": "^3.11.7",
+    "@studio-freight/lenis": "^1.0.42",
+    "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
+    "formik": "^2.4.6",
+    "framer-motion": "^11.11.10",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.7.3",
+    "next": "^15.0.1",
+    "next-auth": "^4.24.10",
+    "react": "^19.0.0-rc-69d4b800-20241021",
+    "react-dom": "^19.0.0-rc-69d4b800-20241021",
+    "react-table": "^7.8.0",
+    "styled-components": "^6.1.13",
+    "styled-jsx": "^5.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "15.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
